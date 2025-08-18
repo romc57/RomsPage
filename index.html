@@ -3,39 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rom's Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Rom Cohen - Software Engineer & Technology Enthusiast. Professional portfolio showcasing experience, skills, and projects.">
+    <meta name="keywords" content="Rom Cohen, Software Engineer, Technology, Portfolio, Web Development">
+    <meta name="author" content="Rom Cohen">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:title" content="Rom Cohen - Software Engineer Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing experience, skills, and projects.">
+    <meta property="og:image" content="https://yourportfolio.com/rom-cohen-profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourportfolio.com/">
+    <meta property="twitter:title" content="Rom Cohen - Software Engineer Portfolio">
+    <meta property="twitter:description" content="Professional portfolio showcasing experience, skills, and projects.">
+    <meta property="twitter:image" content="https://yourportfolio.com/rom-cohen-profile.jpg">
+
+    <title>Rom Cohen - Software Engineer Portfolio</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="rom-cohen-profile.jpg" as="image">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#dc2626">
 </head>
 <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Rom Cohen</a>
+                <a href="#home" aria-label="Rom Cohen - Home">Rom Cohen</a>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Rom Cohen</span></h1>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">Rom Cohen</span></h1>
                 <h2 class="hero-subtitle">Software Engineer & Technology Enthusiast</h2>
                 <p class="hero-description">
                     Passionate about creating innovative solutions and building exceptional digital experiences with modern technologies.
@@ -55,7 +89,7 @@
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="container">
+        <div class="about-container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
@@ -90,7 +124,7 @@
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
-        <div class="container">
+        <div class="experience-container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -143,7 +177,7 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="container">
+        <div class="projects-container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
@@ -220,7 +254,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <div class="container">
+        <div class="skills-container">
             <h2 class="section-title">Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-category">
@@ -276,7 +310,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="container">
+        <div class="contact-container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
@@ -310,33 +344,20 @@
                         </a>
                     </div>
                 </div>
-                
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" required placeholder="Subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="footer-container">
             <p>&copy; 2025 Rom Cohen. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <!-- Scripts -->
+    <script type="module" src="js/app.js"></script>
+    <script nomodule src="script.js"></script>
 </body>
 </html>
