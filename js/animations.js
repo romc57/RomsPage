@@ -10,6 +10,9 @@ class Animations {
             rootMargin: '0px 0px -50px 0px'
         };
         
+        this.animationsReady = false;
+        this.onReadyCallbacks = [];
+        
         this.init();
     }
 
@@ -19,6 +22,22 @@ class Animations {
         this.setupTypingAnimation();
         this.setupParallaxEffect();
         this.setupLoadingAnimation();
+    }
+
+    // Method to register callbacks for when animations are ready
+    onReady(callback) {
+        if (this.animationsReady) {
+            callback();
+        } else {
+            this.onReadyCallbacks.push(callback);
+        }
+    }
+
+    // Call this when animations are fully initialized
+    markAsReady() {
+        this.animationsReady = true;
+        this.onReadyCallbacks.forEach(callback => callback());
+        this.onReadyCallbacks = [];
     }
 
     setupScrollAnimations() {
@@ -60,6 +79,11 @@ class Animations {
         const counters = document.querySelectorAll('.stat-number');
         
         counters.forEach(counter => {
+            // Skip the GitHub projects counter - it's managed by github-stats.js
+            if (counter.id === 'projects-count') {
+                return;
+            }
+            
             const target = parseInt(counter.textContent);
             const increment = target / 200;
             let current = 0;
@@ -121,6 +145,11 @@ class Animations {
     setupLoadingAnimation() {
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
+            
+            // Mark animations as ready after a short delay to ensure everything is settled
+            setTimeout(() => {
+                this.markAsReady();
+            }, 1500); // Wait for typing animation and other effects to complete
         });
     }
 }

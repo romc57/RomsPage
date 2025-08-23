@@ -31,9 +31,11 @@ class Portfolio {
             this.modules.contactForm = new ContactForm();
             this.modules.animations = new Animations();
 
-            // Initialize GitHub stats module
-            this.modules.gitHubStats = new GitHubStats();
-            this.modules.gitHubStats.init();
+            // Initialize GitHub stats module AFTER animations are ready
+            this.modules.animations.onReady(() => {
+                this.modules.gitHubStats = new GitHubStats();
+                this.modules.gitHubStats.init();
+            });
 
             // Setup global event listeners
             this.setupGlobalEvents();
