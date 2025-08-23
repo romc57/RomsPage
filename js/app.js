@@ -7,6 +7,7 @@ import Navigation from './navigation.js';
 import ContactForm from './contact.js';
 import Animations from './animations.js';
 import Utils from './utils.js';
+import GitHubStats from './github-stats.js';
 
 class Portfolio {
     constructor() {
@@ -29,6 +30,11 @@ class Portfolio {
             this.modules.navigation = new Navigation();
             this.modules.contactForm = new ContactForm();
             this.modules.animations = new Animations();
+
+            // Initialize GitHub stats module
+            this.modules.gitHubStats = new GitHubStats('romc57');
+            this.modules.gitHubStats.init();
+            console.log('📊 GitHub stats module initialized');
 
             // Setup global event listeners
             this.setupGlobalEvents();

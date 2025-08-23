@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Stats Debug</title>
+</head>
+<body>
+    <h1>GitHub Stats Debug Page</h1>
+    
+    <div>
+        <h2>Test Element</h2>
+        <div class="stat">
+            <span class="stat-number" id="projects-count">25+</span>
+            <span class="stat-label">Projects Completed</span>
+        </div>
+    </div>
+
+    <div>
+        <h2>Debug Controls</h2>
+        <button onclick="testGitHubAPI()">Test GitHub API</button>
+        <button onclick="testDOMUpdate()">Test DOM Update</button>
+        <button onclick="debugUpdateProjects()">Debug Update Projects</button>
+    </div>
+
+    <div>
+        <h2>Console Output</h2>
+        <div id="console-output" style="background: #f0f0f0; padding: 10px; font-family: monospace; white-space: pre-wrap;"></div>
+    </div>
+
+    <script type="module">
+        import GitHubStats from './js/github-stats.js';
+        
+        window.testGitHubAPI = async () => {
+            console.log('🧪 Testing GitHub API connection...');
+            try {
+                const response = await fetch('https://api.github.com/users/romc57');
+                const data = await response.json();
+                console.log('✅ GitHub API Response:', data);
+                console.log(`📊 Public repos count: ${data.public_repos}`);
+                document.getElementById('console-output').textContent += `✅ API Success: ${data.public_repos} repos\n`;
+                return data;
+            } catch (error) {
+                console.error('❌ GitHub API test failed:', error);
+                document.getElementById('console-output').textContent += `❌ API Error: ${error.message}\n`;
+                return null;
+            }
+        };
+
+        window.testDOMUpdate = () => {
+            const element = document.querySelector('#projects-count');
+            console.log('🔍 DOM Element found:', element);
+            if (element) {
+                element.textContent = 'TEST!';
+                element.style.color = 'red';
+                document.getElementById('console-output').textContent += `✅ DOM Update: Element found and updated\n`;
+            } else {
+                document.getElementById('console-output').textContent += `❌ DOM Update: Element not found\n`;
+            }
+        };
+
+        // Initialize GitHub stats
+        const gitHubStats = new GitHubStats('romc57');
+        
+        window.debugUpdateProjects = async () => {
+            console.log('🔧 Manual project count update...');
+            document.getElementById('console-output').textContent += `🔧 Starting manual update...\n`;
+            const result = await gitHubStats.updateProjectsStat();
+            document.getElementById('console-output').textContent += `📊 Update result: ${JSON.stringify(result, null, 2)}\n`;
+            return result;
+        };
+
+        // Auto-run test when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('🚀 Debug page loaded, running tests...');
+            document.getElementById('console-output').textContent += `🚀 Page loaded, starting tests...\n`;
+            
+            // Test DOM access
+            testDOMUpdate();
+            
+            // Test GitHub API
+            await testGitHubAPI();
+            
+            // Test full update
+            await debugUpdateProjects();
+        });
+    </script>
+</body>
+</html>
