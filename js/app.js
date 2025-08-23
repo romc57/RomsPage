@@ -145,4 +145,50 @@ const portfolio = new Portfolio();
 // Make it globally accessible for debugging/external access
 window.Portfolio = portfolio;
 
+/**
+ * Copy email to clipboard functionality
+ */
+window.copyEmail = async function() {
+    const email = 'rom.cohen10@gmail.com';
+    const emailElement = document.querySelector('.email-copy');
+    const tooltip = emailElement.querySelector('.copy-tooltip');
+    
+    try {
+        // Try modern clipboard API first
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+        } else {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            textArea.remove();
+        }
+        
+        // Show success feedback
+        emailElement.classList.add('copy-success');
+        tooltip.textContent = 'Copied!';
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+            emailElement.classList.remove('copy-success');
+            tooltip.textContent = 'Copy to clipboard';
+        }, 2000);
+        
+    } catch (err) {
+        console.error('Failed to copy email:', err);
+        // Show error feedback
+        tooltip.textContent = 'Copy failed';
+        setTimeout(() => {
+            tooltip.textContent = 'Copy to clipboard';
+        }, 2000);
+    }
+};
+
 export default Portfolio;

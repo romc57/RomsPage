@@ -1,4 +1,5 @@
 /* Responsive design for mobile and tablet devices */
+/* Updated: August 23, 2025 - Profile photo increased to 312px on mobile */
 
 /* Tablet styles */
 @media (max-width: 1024px) {
@@ -11,8 +12,8 @@
     }
     
     .profile-photo {
-        width: 250px;
-        height: 250px;
+        width: 325px;
+        height: 325px;
     }
     
     .about-stats {
@@ -75,8 +76,8 @@
     }
     
     .profile-photo {
-        width: 200px;
-        height: 200px;
+        width: 281px !important;
+        height: 281px !important;
     }
     
     /* Sections */
@@ -666,5 +667,22 @@
         max-width: 300px;
         padding: 1.8rem 2.5rem;
         font-size: 1.2rem;
+    }
+}
+
+/* Desktop specific contact item fixes */
+@media (min-width: 1025px) {
+    .contact-item {
+        font-size: 1rem;
+        max-width: 320px;
+        padding: 1.5rem 1.5rem;
+    }
+    
+    .contact-item span,
+    .contact-item .contact-link {
+        font-size: 0.95rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        line-height: 1.4;
     }
 }
