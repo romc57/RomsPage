@@ -32,9 +32,8 @@ class Portfolio {
             this.modules.animations = new Animations();
 
             // Initialize GitHub stats module
-            this.modules.gitHubStats = new GitHubStats('romc57');
+            this.modules.gitHubStats = new GitHubStats();
             this.modules.gitHubStats.init();
-            console.log('📊 GitHub stats module initialized');
 
             // Setup global event listeners
             this.setupGlobalEvents();
