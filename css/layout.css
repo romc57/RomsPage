@@ -330,6 +330,36 @@
     padding: 1.5rem;
 }
 
+.project-description {
+    margin-bottom: 1rem;
+}
+
+.description-preview,
+.description-full {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+.see-more-btn {
+    background: transparent;
+    color: #dc2626;
+    border: 1px solid #dc2626;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.see-more-btn:hover {
+    background: #dc2626;
+    color: white;
+    transform: translateY(-1px);
+}
+
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -373,7 +403,7 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 

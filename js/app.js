@@ -35,6 +35,9 @@ class Portfolio {
             this.modules.animations.onReady(() => {
                 this.modules.gitHubStats = new GitHubStats();
                 this.modules.gitHubStats.init();
+                
+                // Update technologies count after animations are ready
+                this.updateTechnologiesCount();
             });
 
             // Setup global event listeners
@@ -59,6 +62,25 @@ class Portfolio {
         document.addEventListener('visibilitychange', () => {
             this.handleVisibilityChange();
         });
+
+        // Make toggleDescription available globally for onclick handlers
+        window.toggleDescription = (button) => {
+            const description = button.closest('.project-description');
+            const preview = description.querySelector('.description-preview');
+            const full = description.querySelector('.description-full');
+            
+            if (full.style.display === 'none') {
+                // Show full description
+                preview.style.display = 'none';
+                full.style.display = 'block';
+                button.textContent = 'See less';
+            } else {
+                // Show preview
+                preview.style.display = 'block';
+                full.style.display = 'none';
+                button.textContent = 'See more';
+            }
+        };
     }
 
     setupPerformanceOptimizations() {
@@ -133,6 +155,48 @@ class Portfolio {
                 document.body.removeChild(notification);
             }, 300);
         }, 3000);
+    }
+
+    /**
+     * Toggle project description between preview and full text
+     * @param {HTMLElement} button - The button that was clicked
+     */
+    toggleDescription(button) {
+        const description = button.closest('.project-description');
+        const preview = description.querySelector('.description-preview');
+        const full = description.querySelector('.description-full');
+        
+        if (full.style.display === 'none') {
+            // Show full description
+            preview.style.display = 'none';
+            full.style.display = 'block';
+            button.textContent = 'See less';
+        } else {
+            // Show preview
+            preview.style.display = 'block';
+            full.style.display = 'none';
+            button.textContent = 'See more';
+        }
+    }
+
+    /**
+     * Count and update the technologies stat from the skills section
+     * Only counts "Tools & Technologies" category to show 18 instead of all 62
+     */
+    updateTechnologiesCount() {
+        try {
+            // Count only skill items in the "Tools & Technologies" category
+            const toolsSection = document.querySelector('.skill-category:last-child .skill-items');
+            const toolsCount = toolsSection ? toolsSection.querySelectorAll('.skill-item').length : 0;
+            
+            // Update the counter element
+            const technologiesCountElement = document.getElementById('technologies-count');
+            if (technologiesCountElement && toolsCount > 0) {
+                technologiesCountElement.textContent = `${toolsCount}+`;
+            }
+        } catch (error) {
+            console.error('Error updating technologies count:', error);
+        }
     }
 
     // Destroy method for cleanup
