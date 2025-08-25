@@ -85,7 +85,9 @@ class Animations {
             }
             
             const target = parseInt(counter.textContent);
-            const increment = target / 200;
+            const isFast = counter.dataset.speed === 'fast';
+            const steps = isFast ? 80 : 200; // fewer steps = faster
+            const increment = target / steps;
             let current = 0;
             
             const updateCounter = () => {
@@ -104,14 +106,83 @@ class Animations {
 
     setupTypingAnimation() {
         window.addEventListener('load', () => {
-            const heroSubtitle = document.querySelector('.hero-subtitle');
-            if (!heroSubtitle) return;
+            const desktopSpan = document.querySelector('.subtitle-desktop');
+            const mobileContainer = document.querySelector('.subtitle-mobile');
+            if (!desktopSpan || !mobileContainer) return;
 
-            const originalText = heroSubtitle.textContent;
-            
-            setTimeout(() => {
-                this.typeWriter(heroSubtitle, originalText, 100);
-            }, 1000);
+            const mobileLines = Array.from(mobileContainer.querySelectorAll('.subtitle-line'));
+            const mobileOriginalHtml = mobileLines.map(line => line.textContent.trim());
+
+            const getActiveType = () => window.matchMedia('(min-width: 1025px)').matches ? 'desktop' : 'mobile';
+
+            // Store originals
+            if (!desktopSpan.dataset.originalHtml) {
+                desktopSpan.dataset.originalHtml = desktopSpan.textContent.trim();
+            }
+
+            // Clear for typing
+            desktopSpan.textContent = '';
+            mobileLines.forEach(line => line.textContent = '');
+
+            const typeDesktop = () => {
+                if (desktopSpan.dataset.typed === 'true') { desktopSpan.style.visibility = 'visible'; return; }
+                const text = desktopSpan.dataset.originalHtml;
+                let i = 0;
+                desktopSpan.style.visibility = 'visible';
+                const step = () => {
+                    if (i >= text.length) { desktopSpan.dataset.typed = 'true'; return; }
+                    desktopSpan.textContent += text[i++];
+                    setTimeout(step, 55);
+                };
+                step();
+            };
+
+            const typeMobile = () => {
+                if (mobileContainer.dataset.typed === 'true') { mobileContainer.style.visibility = 'visible'; return; }
+                mobileContainer.style.visibility = 'visible';
+                let lineIndex = 0;
+                const typeLine = () => {
+                    if (lineIndex >= mobileLines.length) { mobileContainer.dataset.typed = 'true'; return; }
+                    const lineEl = mobileLines[lineIndex];
+                    const fullText = mobileOriginalHtml[lineIndex];
+                    let charIndex = 0;
+                    const typeChar = () => {
+                        if (charIndex >= fullText.length) { lineIndex++; setTimeout(typeLine, 150); return; }
+                        lineEl.textContent += fullText[charIndex++];
+                        setTimeout(typeChar, 55);
+                    };
+                    typeChar();
+                };
+                typeLine();
+            };
+
+            const runInitial = () => {
+                const active = getActiveType();
+                if (active === 'desktop') {
+                    mobileContainer.style.visibility = 'hidden';
+                    typeDesktop();
+                } else {
+                    desktopSpan.style.visibility = 'hidden';
+                    typeMobile();
+                }
+            };
+
+            runInitial();
+
+            let lastDesktop = window.matchMedia('(min-width: 1025px)').matches;
+            window.addEventListener('resize', () => {
+                const isDesktop = window.matchMedia('(min-width: 1025px)').matches;
+                if (isDesktop !== lastDesktop) {
+                    lastDesktop = isDesktop;
+                    if (isDesktop) {
+                        mobileContainer.style.visibility = 'hidden';
+                        typeDesktop();
+                    } else {
+                        desktopSpan.style.visibility = 'hidden';
+                        typeMobile();
+                    }
+                }
+            });
         });
     }
 

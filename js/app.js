@@ -5,7 +5,7 @@
 
 import Navigation from './navigation.js';
 import ContactForm from './contact.js';
-import Animations from './animations.js';
+import Animations from './animations.js?v=2';
 import Utils from './utils.js';
 import GitHubStats from './github-stats.js';
 
@@ -35,7 +35,7 @@ class Portfolio {
             this.modules.animations.onReady(() => {
                 this.modules.gitHubStats = new GitHubStats();
                 this.modules.gitHubStats.init();
-                
+                    
                 // Update technologies count after animations are ready
                 this.updateTechnologiesCount();
             });
