@@ -1,5 +1,10 @@
 /* Navigation styles */
 
+/* Disable transitions during theme switch to prevent flashing */
+html[style*="--transition-disabled"] .navbar {
+    transition: none !important;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -12,6 +17,10 @@
     border-bottom: 1px solid rgba(220, 38, 127, 0.3);
 }
 
+html.light-theme .navbar {
+    background: rgba(120, 120, 120, 0.95);
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -21,12 +30,30 @@
     align-items: center;
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
     color: #dc2626;
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+html.light-theme .nav-logo a {
+    text-shadow: 
+        -0.5px -0.5px 0 #000,
+        0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000,
+        0 -0.5px 0 #000,
+        0 0.5px 0 #000,
+        -0.5px 0 0 #000,
+        0.5px 0 0 #000;
 }
 
 .nav-logo a:hover {
@@ -42,7 +69,7 @@
 }
 
 .nav-link {
-    color: #ffffff;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -89,7 +116,7 @@
 .bar {
     width: 25px;
     height: 3px;
-    background: #ffffff;
+    background: var(--text-primary);
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 1px;
@@ -108,7 +135,7 @@
 }
 
 /* Mobile navigation styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hamburger {
         display: flex;
     }
@@ -128,6 +155,11 @@
         backdrop-filter: blur(10px);
     }
     
+    html.light-theme .nav-menu {
+        background: rgba(120, 120, 120, 0.98);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.2);
+    }
+    
     .nav-menu.active {
         left: 0;
     }
@@ -138,8 +170,4 @@
     }
 }
 
-/* Navbar scroll effects */
-.navbar.scrolled {
-    background: rgba(10, 10, 10, 0.98);
-    box-shadow: 0 2px 20px rgba(220, 38, 38, 0.3);
-}
+/* Navbar scroll effects - handled by JavaScript */

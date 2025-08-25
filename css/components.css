@@ -44,7 +44,7 @@
 
 .btn-secondary {
     background: transparent;
-    color: white;
+    color: var(--text-primary);
     border: 2px solid #dc2626;
 }
 
@@ -57,7 +57,7 @@
 
 /* Cards */
 .card {
-    background: #1a1a1a;
+    background: var(--background-light);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -78,11 +78,11 @@
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .card-text {
-    color: #cccccc;
+    color: var(--text-secondary);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -95,20 +95,20 @@
 .form-label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #ffffff;
+    color: var(--text-primary);
     font-weight: 500;
 }
 
 .form-input {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #333333;
+    border: 2px solid var(--neutral-border);
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     font-family: inherit;
-    background: #0a0a0a;
-    color: #ffffff;
+    background: var(--background-dark);
+    color: var(--text-primary);
     word-wrap: break-word;
     overflow-wrap: break-word;
     box-sizing: border-box;
@@ -121,7 +121,7 @@
 }
 
 .form-input::placeholder {
-    color: #666666;
+    color: var(--text-muted);
 }
 
 .form-textarea {
@@ -180,7 +180,7 @@
 .progress {
     width: 100%;
     height: 8px;
-    background: #333333;
+    background: var(--neutral-border);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -204,8 +204,8 @@
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
-    background: #333333;
-    color: white;
+    background: var(--background-light);
+    color: var(--text-primary);
     padding: 0.5rem;
     border-radius: 4px;
     font-size: 0.875rem;
@@ -222,7 +222,7 @@
 }
 
 /* Mobile form improvements */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .contact-form {
         margin: 0 auto;
         padding: 1.5rem;

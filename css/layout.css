@@ -3,8 +3,8 @@
 /* Hero Section */
 .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, var(--overlay-tint) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -119,7 +119,7 @@
 
 /* About Section */
 .about {
-    background: #111111;
+    background: var(--background-medium);
     position: relative;
     z-index: 2;
 }
@@ -141,7 +141,7 @@
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: #cccccc;
+    color: var(--text-secondary);
 }
 
 .about-stats {
@@ -154,7 +154,7 @@
 .stat {
     text-align: center;
     padding: 2rem;
-    background: #1a1a1a;
+    background: var(--background-light);
     border-radius: 12px;
     border: 1px solid rgba(220, 38, 38, 0.2);
     transition: transform 0.3s ease;
@@ -173,13 +173,19 @@
 }
 
 .stat-label {
-    color: #cccccc;
+    color: var(--text-secondary);
     font-weight: 500;
+}
+
+/* Light mode specific improvements for GitHub projects stat */
+html.light-theme .stat:nth-child(2) .stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* Experience Section */
 .experience {
-    background: #0a0a0a;
+    background: var(--background-dark);
 }
 
 .experience-container {
@@ -223,12 +229,12 @@
     height: 18px;
     border-radius: 50%;
     background: #dc2626;
-    border: 4px solid #0a0a0a;
-    box-shadow: 0 0 0 3px #333333;
+    border: 4px solid var(--background-dark);
+    box-shadow: 0 0 0 3px var(--neutral-border);
 }
 
 .timeline-content {
-    background: #1a1a1a;
+    background: var(--background-light);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid rgba(220, 38, 38, 0.2);
@@ -237,7 +243,7 @@
 .timeline-content h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -248,7 +254,7 @@
 }
 
 .timeline-date {
-    color: #cccccc;
+    color: var(--text-secondary);
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -256,7 +262,7 @@
 }
 
 .timeline-content p {
-    color: #cccccc;
+    color: var(--text-secondary);
     margin-bottom: 1rem;
 }
 
@@ -266,7 +272,7 @@
 }
 
 .achievements li {
-    color: #cccccc;
+    color: var(--text-secondary);
     padding: 0.25rem 0;
     position: relative;
     padding-left: 1.5rem;
@@ -282,7 +288,7 @@
 
 /* Projects Section */
 .projects {
-    background: #111111;
+    background: var(--background-medium);
 }
 
 .projects-container {
@@ -301,7 +307,7 @@
 }
 
 .project-card {
-    background: #1a1a1a;
+    background: var(--background-light);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -338,7 +344,7 @@
 .description-full {
     margin-bottom: 1rem;
     line-height: 1.6;
-    color: #d1d5db;
+    color: var(--text-secondary);
 }
 
 .see-more-btn {
@@ -390,7 +396,7 @@
 
 /* Skills Section */
 .skills {
-    background: #0a0a0a;
+    background: var(--background-dark);
 }
 
 .skills-container {
@@ -408,7 +414,7 @@
 }
 
 .skill-category {
-    background: #1a1a1a;
+    background: var(--background-light);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -421,7 +427,7 @@
 .skill-category h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -433,8 +439,8 @@
 }
 
 .skill-item {
-    background: #333333;
-    color: #ffffff;
+    background: var(--neutral-border);
+    color: var(--text-primary);
     padding: 0.5rem 1rem;
     border-radius: 25px;
     font-size: 0.9rem;
@@ -450,7 +456,7 @@
 
 /* Contact Section */
 .contact {
-    background: #111111;
+    background: var(--background-medium);
 }
 
 .contact-container {
@@ -489,7 +495,7 @@
 .contact-info h3 {
     font-size: 2rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -497,7 +503,7 @@
 }
 
 .contact-info p {
-    color: #cccccc;
+    color: var(--text-secondary);
     margin-bottom: 3rem;
     font-size: 1.1rem;
     word-wrap: break-word;
@@ -523,8 +529,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: #cccccc;
-    background: #1a1a1a;
+    color: var(--text-secondary);
+    background: var(--background-light);
     padding: 1.5rem 2rem;
     border-radius: 12px;
     border: 1px solid rgba(220, 38, 38, 0.2);
@@ -566,7 +572,7 @@
 }
 
 .contact-link {
-    color: #cccccc;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
@@ -642,8 +648,8 @@
 
 /* Footer */
 .footer {
-    background: #000000;
-    color: white;
+    background: var(--footer-background);
+    color: var(--text-primary);
     text-align: center;
     padding: 2rem 0;
     border-top: 1px solid rgba(220, 38, 38, 0.3);
@@ -691,8 +697,8 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #2d2d2d;
-    color: white;
+    background: var(--background-elevated);
+    color: var(--text-primary);
     padding: 10px 14px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -703,7 +709,7 @@
     z-index: 9999;
     margin-bottom: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 1px solid #444;
+    border: 1px solid var(--neutral-border-strong);
 }
 
 .copy-tooltip::after {
@@ -713,7 +719,7 @@
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: #2d2d2d;
+    border-top-color: var(--background-elevated);
 }
 
 .email-copy:hover .copy-tooltip {

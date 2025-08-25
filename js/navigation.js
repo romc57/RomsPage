@@ -64,12 +64,24 @@ class Navigation {
     }
 
     updateNavbarBackground() {
+        const isLightTheme = document.documentElement.classList.contains('light-theme');
+        
         if (window.scrollY > 100) {
-            this.navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            this.navbar.style.boxShadow = '0 2px 20px rgba(220, 38, 38, 0.3)';
+            if (isLightTheme) {
+                this.navbar.style.background = 'rgba(120, 120, 120, 0.98)';
+                this.navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                this.navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                this.navbar.style.boxShadow = '0 2px 20px rgba(220, 38, 38, 0.3)';
+            }
         } else {
-            this.navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            this.navbar.style.boxShadow = 'none';
+            if (isLightTheme) {
+                this.navbar.style.background = 'rgba(120, 120, 120, 0.95)';
+                this.navbar.style.boxShadow = 'none';
+            } else {
+                this.navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                this.navbar.style.boxShadow = 'none';
+            }
         }
     }
 
@@ -100,6 +112,11 @@ class Navigation {
                 this.navMenu.classList.remove('active');
             }
         });
+    }
+
+    // Public method to update navbar colors when theme changes
+    updateTheme() {
+        this.updateNavbarBackground();
     }
 
     debounce(func, wait) {

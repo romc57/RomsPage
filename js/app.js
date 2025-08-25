@@ -31,6 +31,9 @@ class Portfolio {
             this.modules.contactForm = new ContactForm();
             this.modules.animations = new Animations();
 
+            // Initialize theme toggle
+            this.setupThemeToggle();
+
             // Attempt early technologies count (will retry until skills present)
             this.updateTechnologiesCount();
 
@@ -87,6 +90,60 @@ class Portfolio {
                 button.textContent = 'See more';
             }
         };
+    }
+
+    setupThemeToggle() {
+        const toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        const applyTheme = (theme) => {
+            const root = document.documentElement;
+            const isLight = theme === 'light';
+            
+            // Temporarily disable transitions to prevent flashing
+            root.style.setProperty('--transition-disabled', '1');
+            
+            root.classList.toggle('light-theme', isLight);
+            toggle.setAttribute('aria-pressed', String(isLight));
+            toggle.setAttribute('aria-label', isLight ? 'Activate dark mode' : 'Activate light mode');
+            const icon = toggle.querySelector('.toggle-icon');
+            if (icon) icon.textContent = isLight ? '🌙' : '☀';
+            
+            // Re-enable transitions after a brief delay
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    root.style.removeProperty('--transition-disabled');
+                });
+            });
+            
+            // Update navigation theme colors
+            if (this.modules.navigation) {
+                this.modules.navigation.updateTheme();
+            }
+            
+            try { 
+                localStorage.setItem('theme', theme); 
+            } catch(e) {
+                console.warn('Could not save theme preference:', e);
+            }
+        };
+
+        // Load saved theme or default to light mode
+        let stored = null;
+        try { 
+            stored = localStorage.getItem('theme'); 
+        } catch(e) {
+            console.warn('Could not access localStorage for theme:', e);
+        }
+        
+        const preferredTheme = stored || 'light'; // Default to light mode instead of system preference
+        applyTheme(preferredTheme);
+
+        // Handle toggle clicks
+        toggle.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.contains('light-theme');
+            applyTheme(isLight ? 'dark' : 'light');
+        });
     }
 
     setupPerformanceOptimizations() {

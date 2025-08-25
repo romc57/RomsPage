@@ -37,6 +37,23 @@
     
     <!-- Theme color -->
     <meta name="theme-color" content="#dc2626">
+    
+    <!-- Apply theme early to prevent flashing -->
+    <script>
+        (function() {
+            try {
+                const stored = localStorage.getItem('theme');
+                const systemPreference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const preferredTheme = stored || 'light'; // Default to light mode
+                if (preferredTheme === 'light') {
+                    document.documentElement.classList.add('light-theme');
+                }
+            } catch(e) {
+                // Default to light mode if localStorage is not available
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Skip link for accessibility -->
@@ -57,11 +74,16 @@
                 <li role="none"><a href="#military" class="nav-link" role="menuitem">Military Service</a></li>
                 <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-            </button>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Activate light mode" aria-pressed="false" title="Toggle color theme">
+                    <span class="toggle-icon" aria-hidden="true">☀</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -129,6 +151,15 @@
         <div class="experience-container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Career Break due to personal reasons</h3>
+                        <span class="timeline-date">2024 - 2025</span>
+                        <p>Career break due to personal reasons. Continued self-learning, developing and staying current with software engineering and AI developments.</p>
+                    </div>
+                </div>
+                <!-- Existing experience entries -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">

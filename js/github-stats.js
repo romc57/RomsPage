@@ -45,7 +45,10 @@ class GitHubStats {
             if (sourceElement) {
                 sourceElement.style.display = 'block';
                 sourceElement.textContent = 'Live from GitHub API';
-                sourceElement.style.color = '#4ade80';
+                // Use darker green for light mode, lighter green for dark mode
+                const isLightTheme = document.documentElement.classList.contains('light-theme');
+                sourceElement.style.color = isLightTheme ? '#16a34a' : '#4ade80';
+                sourceElement.style.fontWeight = isLightTheme ? '600' : '400';
             }
         } else {
             // API failed - show fallback with +
