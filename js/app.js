@@ -5,7 +5,7 @@
 
 import Navigation from './navigation.js';
 import ContactForm from './contact.js';
-import Animations from './animations.js?v=2';
+import Animations from './animations.js';
 import Utils from './utils.js';
 import GitHubStats from './github-stats.js';
 
@@ -31,13 +31,19 @@ class Portfolio {
             this.modules.contactForm = new ContactForm();
             this.modules.animations = new Animations();
 
+            // Attempt early technologies count (will retry until skills present)
+            this.updateTechnologiesCount();
+
             // Initialize GitHub stats module AFTER animations are ready
             this.modules.animations.onReady(() => {
                 this.modules.gitHubStats = new GitHubStats();
                 this.modules.gitHubStats.init();
                     
-                // Update technologies count after animations are ready
-                this.updateTechnologiesCount();
+                // Update technologies count after animations are ready (only if not already computed)
+                const techEl = document.getElementById('technologies-count');
+                if (!techEl || !techEl.dataset.computed) {
+                    this.updateTechnologiesCount();
+                }
             });
 
             // Setup global event listeners
@@ -180,19 +186,34 @@ class Portfolio {
     }
 
     /**
-     * Count and update the technologies stat from the skills section
-     * Only counts "Tools & Technologies" category to show 18 instead of all 62
+     * Count and update the technologies & skills stat from the skills section.
+     * Counts ALL unique skill items across every category (robust to DOM order changes).
+     * Retries a few times if the skills section not yet in DOM.
      */
-    updateTechnologiesCount() {
+    updateTechnologiesCount(retry = 0) {
         try {
-            // Count only skill items in the "Tools & Technologies" category
-            const toolsSection = document.querySelector('.skill-category:last-child .skill-items');
-            const toolsCount = toolsSection ? toolsSection.querySelectorAll('.skill-item').length : 0;
-            
-            // Update the counter element
             const technologiesCountElement = document.getElementById('technologies-count');
-            if (technologiesCountElement && toolsCount > 0) {
-                technologiesCountElement.textContent = `${toolsCount}+`;
+            if (!technologiesCountElement) return; // No element present
+
+            const skillItems = document.querySelectorAll('.skills .skill-item');
+            if (!skillItems.length) {
+                // Skills not yet rendered; retry up to 10 times with small delay
+                if (retry < 10) {
+                    setTimeout(() => this.updateTechnologiesCount(retry + 1), 150);
+                }
+                return;
+            }
+
+            const unique = new Set();
+            skillItems.forEach(item => {
+                const txt = item.textContent.trim().toLowerCase();
+                if (txt) unique.add(txt);
+            });
+
+            const total = unique.size;
+            if (total > 0) {
+                technologiesCountElement.textContent = `${total}+`;
+                technologiesCountElement.dataset.computed = 'true';
             }
         } catch (error) {
             console.error('Error updating technologies count:', error);
