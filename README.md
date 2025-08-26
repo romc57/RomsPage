@@ -3,7 +3,7 @@
 A modern, fast, accessible, fully responsive (mobile / tablet breakpoint at 1024px) portfolio showcasing professional experience, projects, skills and GitHub activity. Light mode is the default experience with a smooth theme toggle for dark mode.
 
 ## Live Demo
-(Add URL once deployed) – e.g. https://romcohen.dev
+https://romc57.github.io/RomsPage/
 
 ## Tech Stack
 - HTML5 semantic structure
