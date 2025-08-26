@@ -1,212 +1,142 @@
-# Rom's Professional Portfolio
+# Rom Cohen – Professional Portfolio
 
-A modern, responsive portfolio website showcasing professional experience, skills, and projects.
+A modern, fast, accessible, fully responsive (mobile / tablet breakpoint at 1024px) portfolio showcasing professional experience, projects, skills and GitHub activity. Light mode is the default experience with a smooth theme toggle for dark mode.
 
-## Features
+## Live Demo
+(Add URL once deployed) – e.g. https://romcohen.dev
 
-- 🎨 Modern and clean design
-- 📱 Fully responsive layout
-- ⚡ Fast loading and optimized
-- 🎯 SEO-friendly structure
-- 🎭 Smooth animations and transitions
-- 📧 Contact form functionality
-- 🌙 Theme toggle (light/dark mode)
-- 📊 Animated statistics counters
-- 🔗 Social media integration
+## Tech Stack
+- HTML5 semantic structure
+- Modular CSS (BEM‑style utility + component layers)
+  - `css/base.css` (variables, resets, typography)
+  - `css/layout.css` (section layouts & grids)
+  - `css/components.css` (cards, buttons, forms, tooltips)
+  - `css/navigation.css` (navbar, menu, theme toggle)
+  - `css/responsive.css` (breakpoint adjustments @ 1024px)
+- Vanilla JavaScript modules
+  - `js/app.js` (theme init & persistence)
+  - `js/navigation.js` (scroll / active link / mobile menu)
+  - `js/github-stats.js` (fetch + render GitHub metrics, adaptive colors)
+  - `js/animations.js`, `js/utils.js`, `js/contact.js` (progressive enhancements)
+- Optional lightweight Node/CORS helpers (`server.js`, `cors-server.js`) for local API testing
 
-## Sections
+## Key Features
+- Default Light Mode with early, no‑flash theme application
+- Accessible Theme Toggle (sun / moon icon, ARIA labels, persisted in localStorage)
+- Refined Navbar (scroll awareness, smooth color transitions, logical tab order)
+- Bold “Rom Cohen” logo with subtle border in light mode for contrast
+- GitHub Stats section with emphasized labels & improved green contrast
+- Responsive layout (single breakpoint @ 1024px + fluid spacing) optimized for real device widths
+- Performance focused: minimal blocking resources, modular CSS, deferred non‑critical JS
+- SEO & share‑ready structure (easily extendable with meta / Open Graph tags)
+- Clean animations kept subtle to preserve performance & reduce motion fatigue
 
-1. **Hero** - Introduction and call-to-action
-2. **About** - Personal information and statistics
-3. **Experience** - Professional timeline
-4. **Projects** - Featured work showcase
-5. **Skills** - Technical proficiencies
-6. **Contact** - Contact form and information
+## Accessibility
+- Semantic landmarks: header, nav, main, section, footer
+- High‑contrast color pairs checked in both themes
+- Focus outlines preserved & visible
+- Reduced motion friendly (animations are short & non essential)
+- ARIA attributes on interactive custom controls (theme toggle, mobile menu)
 
-## Customization
+## Performance Practices
+- Early inline theme script prevents flash of incorrect theme
+- Critical CSS split logically; avoid heavy frameworks
+- Optimized image usage (recommend WebP / modern formats for production)
+- Lazy fetch of GitHub stats
 
-### Personal Information
-Edit the following in `index.html`:
-- Name and title in the hero section
-- About me description
-- Contact information (email, phone, location)
-- Social media links
+## File / Directory Overview
+```
+index.html          # Main document
+main.css            # (Legacy / global root include if still referenced)
+css/                # Modular style layers
+js/                 # Feature scripts
+profile-photo.jpg   # Hero/profile asset
+rom-cohen-profile.jpg
+server.js / cors-server.js # Optional local server utilities
+theme-test.js       # Theme experimentation (dev only)
+```
 
-### Experience
-Update the timeline section with your actual work experience:
-- Job titles and companies
-- Employment dates
-- Achievements and responsibilities
+## Theming System
+- CSS Custom Properties defined in `css/base.css`
+- Document attribute `[data-theme="dark"]` toggled
+- JS: `js/app.js` sets initial theme (prefers stored choice; falls back to light)
+- To add a new theme: extend variable set, apply `[data-theme="new"]` selector, update toggle logic
 
-### Projects
-Replace the placeholder projects with your actual work:
-- Project names and descriptions
-- Technologies used
-- Live demo and GitHub links
-- Project images
+## GitHub Stats
+`js/github-stats.js` fetches public data and styles values:
+- Emphasized labels & darker green tone in light mode for readability
+- Update the GitHub username inside the script to personalize
+- Consider caching if hitting rate limits (unauthenticated API has low quota)
 
-### Skills
-Modify the skills section to reflect your expertise:
-- Frontend technologies
-- Backend frameworks
-- Databases and tools
-- Other relevant skills
+## Responsive Strategy
+- Single main breakpoint at 1024px controlling navigation layout, grids, spacing & font scaling
+- Mobile-first base, enhancements applied above breakpoint
 
-## Deployment Options
-
-### 1. GitHub Pages (Recommended - Free)
-
-1. **Create a GitHub repository:**
+## Getting Started
+1. Clone repository:
    ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/your-portfolio.git
-   git push -u origin main
+   git clone https://github.com/your-username/rom-portfolio.git
+   cd rom-portfolio
    ```
-
-2. **Enable GitHub Pages:**
-   - Go to your repository on GitHub
-   - Navigate to Settings > Pages
-   - Select "Deploy from a branch"
-   - Choose "main" branch and "/ (root)" folder
-   - Click Save
-
-3. **Your site will be available at:**
-   `https://yourusername.github.io/your-portfolio`
-
-### 2. Netlify (Free)
-
-1. **Drag and drop deployment:**
-   - Go to [netlify.com](https://netlify.com)
-   - Drag your project folder to the deploy area
-   - Get instant deployment with custom domain options
-
-2. **Git-based deployment:**
-   - Connect your GitHub repository
-   - Automatic deployments on every push
-   - Custom domain and SSL included
-
-### 3. Vercel (Free)
-
-1. **Install Vercel CLI:**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy:**
-   ```bash
-   vercel
-   ```
-
-3. **Follow the prompts for instant deployment**
-
-### 4. Firebase Hosting (Free)
-
-1. **Install Firebase CLI:**
-   ```bash
-   npm install -g firebase-tools
-   ```
-
-2. **Initialize and deploy:**
-   ```bash
-   firebase login
-   firebase init hosting
-   firebase deploy
-   ```
-
-## Custom Domain Setup
-
-After deployment, you can add a custom domain:
-
-1. **Purchase a domain** from providers like:
-   - Namecheap
-   - GoDaddy
-   - Google Domains
-
-2. **Configure DNS settings:**
-   - Point your domain to your hosting provider
-   - Add CNAME records as required
-
-3. **Enable HTTPS** (usually automatic with modern hosting)
-
-## Performance Optimization
-
-The portfolio is already optimized with:
-- Efficient CSS and JavaScript
-- Optimized images and fonts
-- Minimal external dependencies
-- Fast loading animations
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
-
-## Local Development
-
-To run locally:
-1. Clone the repository
-2. Open `index.html` in a web browser
-3. Or use a local server:
+2. Open `index.html` directly in a browser OR start a simple server:
    ```bash
    # Python
    python -m http.server 8000
-   
-   # Node.js
+
+   # Node (install serve globally if needed)
    npx serve .
-   
-   # PHP
-   php -S localhost:8000
    ```
+3. (Optional) If testing APIs that require CORS adjustments, run `node cors-server.js`.
 
-## Customization Tips
+## Deployment
+### GitHub Pages
+- Push to `main`, enable Pages (Settings → Pages → Deploy from branch, root)
+### Netlify / Vercel
+- Import repo → buildless static deploy (no build command needed)
+### Firebase / Other
+- Serve as static hosting; no server-side code required
 
-### Colors
-The main color scheme uses:
-- Primary: `#2563eb` (blue)
-- Secondary: `#fbbf24` (yellow)
-- Text: `#1f2937` (dark gray)
-- Background: `#ffffff` (white)
+## Customization Checklist
+Update in `index.html` unless noted.
+- Hero: name, title, CTA links
+- About: bio, stats numbers
+- Experience: timeline entries
+- Projects: cards (title, description, tech stack, live/GitHub links, images)
+- Skills: group & order relevant technologies
+- Contact: email address (and phone/location if desired)
+- Social links: GitHub, LinkedIn, X, etc.
+- GitHub username in `js/github-stats.js`
+- Colors: adjust CSS variables in `css/base.css`
+- Fonts: swap Google Font link in `<head>` (update font-family stack)
+- Images: replace `profile-photo.jpg`, project screenshots
 
-### Fonts
-Currently using Inter font from Google Fonts. You can change this in the HTML head section.
+## Contact Form Integration (Production Options)
+- Formspree
+- Netlify Forms
+- EmailJS
+- Custom backend (Node/PHP) – connect via fetch and progressive enhancement
+(Current placeholder simply shows an alert.)
 
-### Images
-Replace the placeholder icons with actual images:
-- Profile photo in hero section
-- Project screenshots
-- Company logos
+## SEO & Metadata Quick Wins
+Add / configure:
+- `<meta name="description" ...>`
+- Open Graph & Twitter Card tags
+- `sitemap.xml` + `robots.txt`
+- Structured data (JSON-LD) for Person / WebSite
+- Analytics (e.g. plausible, GA4) loaded defer/async
 
-## Contact Form Integration
-
-The contact form currently shows an alert. For production, integrate with:
-- [Formspree](https://formspree.io/) - Easy form handling
-- [Netlify Forms](https://www.netlify.com/products/forms/) - If using Netlify
-- [EmailJS](https://www.emailjs.com/) - Client-side email sending
-- Custom backend with Node.js/PHP
-
-## SEO Optimization
-
-Add these to improve SEO:
-- Meta descriptions
-- Open Graph tags
-- Structured data
-- Sitemap.xml
-- Analytics tracking
+## Future Enhancements (Optional)
+- Project filtering by tech tags
+- Light/dark system preference sync (opt-in)
+- Service Worker for offline shell
+- Skeleton loading for stats
+- Reduced motion media query refinement
 
 ## License
+MIT (add a LICENSE file if not already present).
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## Support
-
-If you need help customizing or deploying your portfolio, feel free to reach out!
+## Support / Questions
+Open an issue or reach out for guidance customizing or extending the portfolio.
 
 ---
-
-**Happy coding!** 🚀
+Crafted with a focus on clarity, performance, and maintainability.
