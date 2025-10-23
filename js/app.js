@@ -52,6 +52,9 @@ class Portfolio {
             // Setup global event listeners
             this.setupGlobalEvents();
 
+            // Initialize projects visibility (hide projects after first 3)
+            this.initializeProjectsVisibility();
+
             // Initialize performance optimizations
             this.setupPerformanceOptimizations();
 
@@ -88,6 +91,36 @@ class Portfolio {
                 preview.style.display = 'block';
                 full.style.display = 'none';
                 button.textContent = 'See more';
+            }
+        };
+
+        // Make toggleProjects available globally for onclick handlers
+        window.toggleProjects = () => {
+            const projectCards = document.querySelectorAll('.project-card');
+            const seeMoreBtn = document.querySelector('.see-more-projects-btn');
+            const seeMoreText = seeMoreBtn.querySelector('.see-more-text');
+            const seeLessText = seeMoreBtn.querySelector('.see-less-text');
+            const seeMoreIcon = seeMoreBtn.querySelector('.see-more-icon');
+            const seeLessIcon = seeMoreBtn.querySelector('.see-less-icon');
+            
+            // Hide/show projects after the first 3
+            for (let i = 3; i < projectCards.length; i++) {
+                projectCards[i].classList.toggle('hidden');
+            }
+            
+            // Toggle button text and icon
+            const isShowingMore = !projectCards[3].classList.contains('hidden');
+            
+            if (isShowingMore) {
+                seeMoreText.style.display = 'none';
+                seeLessText.style.display = 'inline';
+                seeMoreIcon.style.display = 'none';
+                seeLessIcon.style.display = 'inline';
+            } else {
+                seeMoreText.style.display = 'inline';
+                seeLessText.style.display = 'none';
+                seeMoreIcon.style.display = 'inline';
+                seeLessIcon.style.display = 'none';
             }
         };
     }
@@ -189,6 +222,14 @@ class Portfolio {
         } else {
             // Page is visible, resume animations
             document.body.classList.remove('page-hidden');
+        }
+    }
+
+    initializeProjectsVisibility() {
+        // Hide projects after the first 3 on page load
+        const projectCards = document.querySelectorAll('.project-card');
+        for (let i = 3; i < projectCards.length; i++) {
+            projectCards[i].classList.add('hidden');
         }
     }
 
