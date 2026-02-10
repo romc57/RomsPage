@@ -240,8 +240,8 @@
                     <div class="project-content">
                         <h3>Moodify - AI-Powered DJ with Gemini (Google Gemini API Competition)</h3>
                         <div class="project-description">
-                            <p class="description-preview">An intelligent AI-powered DJ that curates music based on your vibe, not just genres. Built for the Google Gemini API Developer Competition, leveraging Gemini 3 Pro's advanced reasoning to understand complex mood descriptions...</p>
-                            <p class="description-full" style="display: none;">An intelligent AI-powered DJ that curates music based on your vibe, not just genres. Built for the Google Gemini API Developer Competition, leveraging Gemini 3 Pro's advanced reasoning to understand complex mood descriptions, validate tracks against Spotify's real-time catalog, and deliver a seamless listening experience. Features a Multi-Stage Validation Agent that eliminates AI hallucinations — every suggested track is verified against Spotify's API before being queued. Includes Reasoning-Based DJ mode using Gemini's thoughtSignature for stateful conversations, "Rescue Mode" that detects skips and pivots the vibe instantly, and hallucination guardrails that penalize incorrect versions. Built with React Native (Expo) and a dynamic glassmorphism UI that adapts to the current mood and album art.</p>
+                            <p class="description-preview">An intelligent AI-powered DJ that curates music based on your vibe, not just genres. Built for the Google Gemini API Developer Competition, combining Gemini 3 Pro's reasoning with a heuristic scoring algorithm and multi-service data pipeline to deliver zero-hallucination music recommendations...</p>
+                            <p class="description-full" style="display: none;">An intelligent AI-powered DJ that curates music based on your vibe, not just genres. Built for the Google Gemini API Developer Competition, combining Gemini 3 Pro's reasoning with a heuristic scoring algorithm and multi-service data pipeline to deliver zero-hallucination music recommendations. At the core is a custom Validated Queue Service — a heuristic scoring engine that bridges AI and reality. When Gemini suggests tracks, each one is scored against Spotify search results using Dice coefficient string similarity for fuzzy title/artist matching, weighted penalties for alternate versions (remixes, live recordings, covers), and popularity bonuses to prefer originals. Tracks must pass a minimum score threshold to be accepted. When suggestions fail validation, the system feeds failure context back into Gemini for intelligent backfill — creating a closed-loop data pipeline where AI output, Spotify catalog data, user listening history from the local database, and real-time skip behavior all flow between services to continuously refine results. This multi-source data integration enables features like "Rescue Mode" (3 skips trigger an automatic vibe pivot using skip history as negative signal), stateful reasoning via Gemini's thoughtSignature (the AI remembers why it picked previous songs), and daily exclusion tracking that combines database play history with session state to prevent repetition. Built with React Native (Expo) and a dynamic glassmorphism UI that adapts to the current mood and album art.</p>
                             <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
                         </div>
                         <div class="project-tech">
@@ -251,10 +251,12 @@
                             <span class="tech-tag">Google Gemini 3 Pro</span>
                             <span class="tech-tag">Spotify Web API</span>
                             <span class="tech-tag">AI Agents</span>
+                            <span class="tech-tag">Heuristic Scoring</span>
+                            <span class="tech-tag">Dice Coefficient</span>
                             <span class="tech-tag">Chain-of-Thought</span>
+                            <span class="tech-tag">Closed-Loop Pipeline</span>
                             <span class="tech-tag">OAuth 2.0</span>
                             <span class="tech-tag">Fuzzy Matching</span>
-                            <span class="tech-tag">Glassmorphism UI</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/romc57/Moodify-PowerByGemini" class="project-link" target="_blank" rel="noopener noreferrer">
