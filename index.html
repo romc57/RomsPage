@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          
+
     <meta name="keywords" content="Rom Cohen, Software Engineer, Technology, Portfolio, Web Development">
     <meta name="author" content="Rom Cohen">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourportfolio.com/">
@@ -22,25 +23,26 @@
     <meta property="twitter:image" content="https://yourportfolio.com/rom-cohen-profile.jpg">
 
     <title>Rom Cohen - Software Engineer Portfolio</title>
-    
+
     <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
     <link rel="preload" href="rom-cohen-profile.jpg" as="image">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="main.css?v=20250825" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
+
     <!-- Theme color -->
     <meta name="theme-color" content="#dc2626">
-    
+
     <!-- Apply theme early to prevent flashing -->
     <script>
-        (function() {
+        (function () {
             try {
                 const stored = localStorage.getItem('theme');
                 const systemPreference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -48,13 +50,14 @@
                 if (preferredTheme === 'light') {
                     document.documentElement.classList.add('light-theme');
                 }
-            } catch(e) {
+            } catch (e) {
                 // Default to light mode if localStorage is not available
                 document.documentElement.classList.add('light-theme');
             }
         })();
     </script>
 </head>
+
 <body>
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -75,7 +78,8 @@
                 <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
             </ul>
             <div class="nav-controls">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Activate light mode" aria-pressed="false" title="Toggle color theme">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Activate light mode" aria-pressed="false"
+                    title="Toggle color theme">
                     <span class="toggle-icon" aria-hidden="true">☀</span>
                 </button>
                 <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -94,468 +98,560 @@
             <div class="hero-container">
                 <div class="hero-content">
                     <h1 class="hero-title">Hi, I'm <span class="highlight">Rom Cohen</span></h1>
-                <h2 class="hero-subtitle">
-                    <span class="subtitle-desktop">Software Engineer & Technology Enthusiast</span>
-                    <span class="subtitle-mobile">
-                        <span class="subtitle-line">Software Engineer</span>
-                        <span class="subtitle-line">&amp;</span>
-                        <span class="subtitle-line">Technology Enthusiast</span>
-                    </span>
-                </h2>
-                <p class="hero-description">
-                    Passionate about computers and technology since a young age, curious across the entire field. Self-taught and always learning more, I design and ship pragmatic backend, machine learning and computer vision, cloud and automation solutions focused on performance, maintainability and real impact.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                    <h2 class="hero-subtitle">
+                        <span class="subtitle-desktop">Software Engineer & Technology Enthusiast</span>
+                        <span class="subtitle-mobile">
+                            <span class="subtitle-line">Software Engineer</span>
+                            <span class="subtitle-line">&amp;</span>
+                            <span class="subtitle-line">Technology Enthusiast</span>
+                        </span>
+                    </h2>
+                    <p class="hero-description">
+                        Passionate about computers and technology since a young age, curious across the entire field.
+                        Self-taught and always learning more, I design and ship pragmatic backend, machine learning and
+                        computer vision, cloud and automation solutions focused on performance, maintainability and real
+                        impact.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#projects" class="btn btn-secondary">View My Work</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-photo">
+                        <img src="rom-cohen-profile.jpg" alt="Rom Cohen - Software Engineer" />
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-photo">
-                    <img src="rom-cohen-profile.jpg" alt="Rom Cohen - Software Engineer" />
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a software engineer with a strong computer science foundation and hands-on experience across backend services, machine learning and computer vision, cloud infrastructure, automation, and full‑stack development. I enjoy taking ambiguous technical or product challenges, shaping clear architecture, and shipping pragmatic, maintainable solutions.</p>
-                    <p>My approach is driven by curiosity and disciplined execution. I profile, measure, iterate and automate. I care about clean abstractions, developer experience and delivering features that genuinely help users. I actively work with large language models (LLMs) to prototype assistants, augment developer workflows, build retrieval and tooling integrations, and evaluate how they can be safely and effectively embedded into products. I also use LLMs as collaborative coding accelerators while remaining deeply hands-on and excellent in classic software engineering—architecture, algorithms, performance profiling, debugging and clean, maintainable code. Outside core work I explore emerging AI tooling, refine systems design and ML optimization skills and contribute to internal utilities or open source when possible.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number" data-speed="fast">4+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="projects-count">9+</span>
-                            <span class="stat-label">Public GitHub Projects</span>
-                            <small class="stat-source" style="display: none; color: #888; font-size: 0.7rem; margin-top: 0.25rem;">Estimated (API unavailable)</small>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" id="technologies-count">60+</span>
-                            <span class="stat-label">Technologies &amp; Skills</span>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a software engineer with a strong computer science foundation and hands-on experience
+                            across backend services, machine learning and computer vision, cloud infrastructure,
+                            automation, and full‑stack development. I enjoy taking ambiguous technical or product
+                            challenges, shaping clear architecture, and shipping pragmatic, maintainable solutions.</p>
+                        <p>My approach is driven by curiosity and disciplined execution. I profile, measure, iterate and
+                            automate. I care about clean abstractions, developer experience and delivering features that
+                            genuinely help users. I actively work with large language models (LLMs) to prototype
+                            assistants, augment developer workflows, build retrieval and tooling integrations, and
+                            evaluate how they can be safely and effectively embedded into products. I also use LLMs as
+                            collaborative coding accelerators while remaining deeply hands-on and excellent in classic
+                            software engineering—architecture, algorithms, performance profiling, debugging and clean,
+                            maintainable code. Outside core work I explore emerging AI tooling, refine systems design
+                            and ML optimization skills and contribute to internal utilities or open source when
+                            possible.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number" data-speed="fast">4+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="projects-count">9+</span>
+                                <span class="stat-label">Public GitHub Projects</span>
+                                <small class="stat-source"
+                                    style="display: none; color: #888; font-size: 0.7rem; margin-top: 0.25rem;">Estimated
+                                    (API unavailable)</small>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="technologies-count">60+</span>
+                                <span class="stat-label">Technologies &amp; Skills</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="experience-container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Career Break due to personal reasons</h3>
-                        <span class="timeline-date">2024 - 2025</span>
-                        <p>Career break due to personal reasons. Continued self-learning, developing and staying current with software engineering and AI developments.</p>
-                    </div>
-                </div>
-                <!-- Existing experience entries -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Software Engineer</h3>
-                        <h4>ITC - Intelligent Traffic Control</h4>
-                        <span class="timeline-date">2021 - 2023</span>
-                        <p>Development and design of algorithmics, tools, automations and pipelines across all of the company's technological stack. Led initiation and execution of projects, R&D and DevOps initiatives.</p>
-                        <ul class="achievements">
-                            <li>Designed, developed and deployed machine learning algorithms using ML frameworks and APIs such as Darknet, PyTorch, OpenCV, Optuna</li>
-                            <li>Developed various types of APIs and integrations for system connectivity</li>
-                            <li>Introduced, maintained, repaired and scaled tools and services including OpenVPN, PostgreSQL, Antmedia, Docker, Prometheus</li>
-                            <li>Worked with multiple programming languages: Python, JavaScript, Bash, Shell, C++</li>
-                            <li>Created full stack applications and Python UI apps for various business needs</li>
-                            <li>Utilized technologies including Python Flask, Redis, Git, RTSP, YOLO, ResNet, CUDA-Nvidia, DeepStream, TensorRT, Toolkit, SUMO</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Cloud Engineer</h3>
-                        <h4>Exlibris</h4>
-                        <span class="timeline-date">2019 - 2021</span>
-                        <p>Developing automations, tools and integrations within the private company cloud and maintaining the cloud's technologies.</p>
-                        <ul class="achievements">
-                            <li>Developed automation scripts and tools for cloud infrastructure management</li>
-                            <li>Built integrations within the private company cloud environment</li>
-                            <li>Maintained and optimized cloud technologies and services</li>
-                            <li>Worked with Python, JavaScript, Bash, Shell scripting languages</li>
-                            <li>Implemented REST API and SOAP API integrations for system connectivity</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Academic Background Section -->
-    <section id="academic" class="about">
-        <div class="about-container">
-            <h2 class="section-title">Academic Background</h2>
-            <div class="academic-content">
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="experience-container">
+                <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h3>Electrical and Computer Engineering</h3>
-                            <h4>The Hebrew University of Jerusalem</h4>
-                            <span class="timeline-date">Completed 140 credits - All Computer Science credits finished</span>
-                            <p>Comprehensive study in electrical engineering and computer science fundamentals, including advanced mathematics, programming, algorithms, and system design. Completed the entire computer science curriculum covering data structures, software engineering, and advanced programming concepts.</p>
+                            <h3>Career Break due to personal reasons</h3>
+                            <span class="timeline-date">2024 - 2025</span>
+                            <p>Career break due to personal reasons. Continued self-learning, developing and staying
+                                current with software engineering and AI developments.</p>
                         </div>
                     </div>
-                    
+                    <!-- Existing experience entries -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
-                            <h3>Bagrut Certificate and Technological Certificate in Electronics and Computers</h3>
-                            <h4>ORT Aerospace High School</h4>
-                            <span class="timeline-date">15 units</span>
-                            <p>Comprehensive studies in electronics, low-level programming including Assembly and C programming languages. Completed a final project that combined electronics and programming, demonstrating the integration of hardware and software development skills.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="projects-container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Moodify - AI-Powered DJ with Gemini (Google Gemini API Competition)</h3>
-                        <div class="project-description">
-                            <p class="description-preview">An intelligent AI-powered DJ that curates music based on your vibe, not just genres. Built for the Google Gemini API Developer Competition, combining Gemini 3 Pro's reasoning with a heuristic scoring algorithm and multi-service data pipeline to deliver zero-hallucination music recommendations...</p>
-                            <p class="description-full" style="display: none;">An intelligent AI-powered DJ that curates music based on your vibe, not just genres. Built for the Google Gemini API Developer Competition, combining Gemini 3 Pro's reasoning with a heuristic scoring algorithm and multi-service data pipeline to deliver zero-hallucination music recommendations. At the core is a custom Validated Queue Service — a heuristic scoring engine that bridges AI and reality. When Gemini suggests tracks, each one is scored against Spotify search results using Dice coefficient string similarity for fuzzy title/artist matching, weighted penalties for alternate versions (remixes, live recordings, covers), and popularity bonuses to prefer originals. Tracks must pass a minimum score threshold to be accepted. When suggestions fail validation, the system feeds failure context back into Gemini for intelligent backfill — creating a closed-loop data pipeline where AI output, Spotify catalog data, user listening history from the local database, and real-time skip behavior all flow between services to continuously refine results. This multi-source data integration enables features like "Rescue Mode" (3 skips trigger an automatic vibe pivot using skip history as negative signal), stateful reasoning via Gemini's thoughtSignature (the AI remembers why it picked previous songs), and daily exclusion tracking that combines database play history with session state to prevent repetition. Built with React Native (Expo) and a dynamic glassmorphism UI that adapts to the current mood and album art.</p>
-                            <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Expo</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">Google Gemini 3 Pro</span>
-                            <span class="tech-tag">Spotify Web API</span>
-                            <span class="tech-tag">AI Agents</span>
-                            <span class="tech-tag">Heuristic Scoring</span>
-                            <span class="tech-tag">Dice Coefficient</span>
-                            <span class="tech-tag">Chain-of-Thought</span>
-                            <span class="tech-tag">Closed-Loop Pipeline</span>
-                            <span class="tech-tag">OAuth 2.0</span>
-                            <span class="tech-tag">Fuzzy Matching</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/romc57/Moodify-PowerByGemini" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://romc57.github.io/Moodify-PowerByGemini/" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> Live Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>GoPerformance - Android Exercise Form Corrector (Final Degree Project - 2022)</h3>
-                        <div class="project-description">
-                            <p class="description-preview">Engineering final project Android application utilizing computer vision and machine learning to analyze and correct exercise form in real-time. Built using Google's MediaPipe vision model for pose estimation...</p>
-                            <p class="description-full" style="display: none;">Engineering final project Android application utilizing computer vision and machine learning to analyze and correct exercise form in real-time. Built using Google's MediaPipe vision model for pose estimation, the app features squat classification and form correction feedback using multiple ML models including KNN and neural networks. Currently focused on squat exercise correction but designed to be scalable for additional exercise types. The trained models are optimized for mobile deployment, providing a complete Android fitness solution. Development and model training performed in the <a href="https://github.com/romc57/EngineeringFinalProject" target="_blank" rel="noopener noreferrer" style="color: #dc2626;">EngineeringFinalProject</a> repository.</p>
-                            <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">MediaPipe</span>
-                            <span class="tech-tag">Google Vision</span>
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">KNN</span>
-                            <span class="tech-tag">Neural Networks</span>
-                            <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">Model Optimization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/romc57/PoseTrainner" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://drive.google.com/file/d/1lweuoz__fVUrakMOixQh6w8ndaG60o-r/view?usp=sharing" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-play-circle"></i> Video Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>PythonApiServer - Multi-Service API Integration Server</h3>
-                        <div class="project-description">
-                            <p class="description-preview">A comprehensive Python Flask server that connects to multiple APIs including Spotify, Google, Facebook, Instagram, WhatsApp, and SMS services. Features OAuth 2.0 authentication, automatic token refresh, and a unified dashboard...</p>
-                            <p class="description-full" style="display: none;">A comprehensive Python Flask server that connects to multiple APIs including Spotify, Google, Facebook, Instagram, WhatsApp, and SMS services. Features OAuth 2.0 authentication, automatic token refresh, and a unified dashboard for managing all connected services. Built with a modular architecture using a BaseAPI class that provides common functionality for all services, ensuring DRY principles and easy extensibility. Includes Docker support for both development and production environments, comprehensive testing with pytest, and detailed documentation. The server automatically handles authentication flows, token management, and provides a clean REST API for accessing various social media and communication platforms.</p>
-                            <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">OAuth 2.0</span>
-                            <span class="tech-tag">REST API</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">pytest</span>
-                            <span class="tech-tag">API Integration</span>
-                            <span class="tech-tag">Spotify API</span>
-                            <span class="tech-tag">Google API</span>
-                            <span class="tech-tag">Facebook API</span>
-                            <span class="tech-tag">Instagram API</span>
-                            <span class="tech-tag">WhatsApp API</span>
-                            <span class="tech-tag">SMS Integration</span>
-                            <span class="tech-tag">Token Management</span>
-                            <span class="tech-tag">Web Scraping</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/romc57/PythonApiServer" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Lisa Cohen Physio - Professional Physical Therapy Website</h3>
-                        <div class="project-description">
-                            <p class="description-preview">Professional website for Lisa Cohen, MS, PT, featuring personalized physical therapy services, orthopedic insoles, and holistic wellness care. Built with modern web technologies...</p>
-                            <p class="description-full" style="display: none;">Professional website for Lisa Cohen, MS, PT, featuring personalized physical therapy services, orthopedic insoles, and holistic wellness care. Built with modern web technologies and responsive design, the site showcases her expertise in orthopedic conditions, sports injuries, and women's health. Features include service descriptions, custom 3D-scanned orthotics information, appointment booking system, and comprehensive contact information. The website highlights her work with the Greater Jerusalem Swim team and Olympic athletes, utilizing advanced techniques like fascial manipulation, craniosacral therapy, and kinesiotaping.</p>
-                            <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive Design</span>
-                            <span class="tech-tag">Modern UI/UX</span>
-                            <span class="tech-tag">Professional Website</span>
-                            <span class="tech-tag">Healthcare</span>
-                            <span class="tech-tag">Business Website</span>
-                            <span class="tech-tag">Contact Forms</span>
-                            <span class="tech-tag">Service Showcase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://romc57.github.io/LisaCohenPhisio/" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> Live Site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- See More Button -->
-            <div class="projects-see-more">
-                <button class="see-more-projects-btn" onclick="toggleProjects()">
-                    <span class="see-more-text">See More Projects</span>
-                    <span class="see-less-text" style="display: none;">See Less Projects</span>
-                    <i class="fas fa-chevron-down see-more-icon"></i>
-                    <i class="fas fa-chevron-up see-less-icon" style="display: none;"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="skills-container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">C</span>
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">Bash</span>
-                        <span class="skill-item">Shell</span>
-                        <span class="skill-item">HTML5</span>
-                        <span class="skill-item">CSS3</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">NoSQL</span>
-                        <span class="skill-item">TypeScript</span>
-                        <span class="skill-item">Kotlin</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>AI Tools & AI-Assisted Development</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">GitHub Copilot</span>
-                        <span class="skill-item">ChatGPT</span>
-                        <span class="skill-item">Claude</span>
-                        <span class="skill-item">Cursor</span>
-                        <span class="skill-item">YOLO</span>
-                        <span class="skill-item">ResNet</span>
-                        <span class="skill-item">K-Means</span>
-                        <span class="skill-item">RL - Ray + GYM</span>
-                        <span class="skill-item">OpenAI API</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">React Native</span>
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Express.js</span>
-                        <span class="skill-item">Flask</span>
-                        <span class="skill-item">FastAPI</span>
-                        <span class="skill-item">Android SDK</span>
-                        <span class="skill-item">jQuery</span>
-                        <span class="skill-item">PyTorch</span>
-                        <span class="skill-item">TensorFlow</span>
-                        <span class="skill-item">Hugging Face</span>
-                        <span class="skill-item">CUDA</span>
-                        <span class="skill-item">TensorRT</span>
-                        <span class="skill-item">Toolkit</span>
-                        <span class="skill-item">pandas</span>
-                        <span class="skill-item">NumPy</span>
-                        <span class="skill-item">Plotly</span>
-                        <span class="skill-item">Optuna</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Databases & Cloud</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">Redis</span>
-                        <span class="skill-item">SQLite</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">GitHub</span>
-                        <span class="skill-item">Bitbucket</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">VM</span>
-                        <span class="skill-item">Jenkins</span>
-                        <span class="skill-item">CI/CD</span>
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Prometheus</span>
-                        <span class="skill-item">Grafana</span>
-                        <span class="skill-item">OpenVPN</span>
-                        <span class="skill-item">WireShark</span>
-                        <span class="skill-item">OSI</span>
-                        <span class="skill-item">RTSP</span>
-                        <span class="skill-item">HLS</span>
-                        <span class="skill-item">GStreamer</span>
-                        <span class="skill-item">REST API</span>
-                        <span class="skill-item">SOAP API</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Military Service Section -->
-    <section id="military" class="about">
-        <div class="about-container">
-            <h2 class="section-title">Military Service</h2>
-            <div class="military-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>First Sergeant</h3>
-                            <h4>Armored Corps</h4>
-                            <span class="timeline-date">2013 - 2016</span>
-                            <p>Served in the Armored Corps with progressive leadership responsibilities, discharged at the rank of First Sergeant.</p>
+                            <h3>Software Engineer</h3>
+                            <h4>ITC - Intelligent Traffic Control</h4>
+                            <span class="timeline-date">2021 - 2023</span>
+                            <p>Development and design of algorithmics, tools, automations and pipelines across all of
+                                the company's technological stack. Led initiation and execution of projects, R&D and
+                                DevOps initiatives.</p>
                             <ul class="achievements">
-                                <li>Tank Commander - Instructed, taught, and ensured safety of squad during basic training while taking care of their needs</li>
-                                <li>Platoon Sergeant - Responsible for logistics, discipline, safety, and served as higher authority for professional training</li>
-                                <li>Company Major - Managed company operations, company logistics, overall discipline, and administrative duties</li>
+                                <li>Designed, developed and deployed machine learning algorithms using ML frameworks and
+                                    APIs such as Darknet, PyTorch, OpenCV, Optuna</li>
+                                <li>Developed various types of APIs and integrations for system connectivity</li>
+                                <li>Introduced, maintained, repaired and scaled tools and services including OpenVPN,
+                                    PostgreSQL, Antmedia, Docker, Prometheus</li>
+                                <li>Worked with multiple programming languages: Python, JavaScript, Bash, Shell, C++
+                                </li>
+                                <li>Created full stack applications and Python UI apps for various business needs</li>
+                                <li>Utilized technologies including Python Flask, Redis, Git, RTSP, YOLO, ResNet,
+                                    CUDA-Nvidia, DeepStream, TensorRT, Toolkit, SUMO</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Cloud Engineer</h3>
+                            <h4>Exlibris</h4>
+                            <span class="timeline-date">2019 - 2021</span>
+                            <p>Developing automations, tools and integrations within the private company cloud and
+                                maintaining the cloud's technologies.</p>
+                            <ul class="achievements">
+                                <li>Developed automation scripts and tools for cloud infrastructure management</li>
+                                <li>Built integrations within the private company cloud environment</li>
+                                <li>Maintained and optimized cloud technologies and services</li>
+                                <li>Worked with Python, JavaScript, Bash, Shell scripting languages</li>
+                                <li>Implemented REST API and SOAP API integrations for system connectivity</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together!</h3>
-                    <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
-                    
-                    <div class="contact-items">
-                        <div class="contact-item email-copy" onclick="copyEmail()" title="Click to copy email">
-                            <i class="fas fa-envelope"></i>
-                            <span>rom.cohen10@gmail.com</span>
-                            <span class="copy-tooltip">Copy to clipboard</span>
+        <!-- Academic Background Section -->
+        <section id="academic" class="about">
+            <div class="about-container">
+                <h2 class="section-title">Academic Background</h2>
+                <div class="academic-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Electrical and Computer Engineering</h3>
+                                <h4>The Hebrew University of Jerusalem</h4>
+                                <span class="timeline-date">Completed 140 credits - All Computer Science credits
+                                    finished</span>
+                                <p>Comprehensive study in electrical engineering and computer science fundamentals,
+                                    including advanced mathematics, programming, algorithms, and system design.
+                                    Completed the entire computer science curriculum covering data structures, software
+                                    engineering, and advanced programming concepts.</p>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+972507148309" class="contact-link" aria-label="Phone number +972 50 714 8309">+972-50-714-8309</a>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Bagrut Certificate and Technological Certificate in Electronics and Computers</h3>
+                                <h4>ORT Aerospace High School</h4>
+                                <span class="timeline-date">15 units</span>
+                                <p>Comprehensive studies in electronics, low-level programming including Assembly and C
+                                    programming languages. Completed a final project that combined electronics and
+                                    programming, demonstrating the integration of hardware and software development
+                                    skills.</p>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Israel</span>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/rom-cohen-39ba18157" class="social-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/romc57" class="social-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://romc57.github.io/RomsPage/" class="social-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-globe"></i>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="projects-container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/moodify.png" alt="Moodify - AI-Powered DJ" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Moodify - AI-Powered DJ with Gemini (Google Gemini API Competition)</h3>
+                            <div class="project-description">
+                                <p class="description-preview">An autonomous AI DJ agent that understands your vibe,
+                                    built for the Google Gemini API Competition. Integrating Gemini 3 Pro with a local
+                                    knowledge graph...</p>
+                                <p class="description-full" style="display: none;">Moodify is an autonomous AI DJ agent
+                                    that curates music based on abstract vibes. <strong>Tech:</strong> Powered by Gemini
+                                    3 Pro, it uses "Thought Signatures" for context, "Thinking Levels" to adjust
+                                    reasoning depth, and <strong>Zustand</strong> for state management.
+                                    <strong>Algorithms:</strong> The "Validated Queue Service" eliminates hallucinations
+                                    by fuzzy-matching suggestions against Spotify's catalog (using Dice coefficient). A
+                                    local SQLite Knowledge Graph enables the "Auto DJ" to autonomously expand playlists
+                                    via graph traversal. <strong>Features:</strong> "Rescue Mode" instantly pivots the
+                                    vibe after 3 consecutive skips. <strong>Design:</strong> A dynamic glassmorphism UI
+                                    adapts colors to album art, creating a fluid, immersive experience.</p>
+                                <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Expo</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Gemini 3 Pro</span>
+                                <span class="tech-tag">SQLite & Knowledge Graph</span>
+                                <span class="tech-tag">Zustand</span>
+                                <span class="tech-tag">Spotify Web API</span>
+                                <span class="tech-tag">Autonomous Agents</span>
+                                <span class="tech-tag">Heuristic Scoring</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/romc57/Moodify-PowerByGemini" class="project-link"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://romc57.github.io/Moodify-PowerByGemini/" class="project-link"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> Live Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/goperformance.png"
+                                alt="GoPerformance - Android Exercise Form Corrector" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>GoPerformance - Android Exercise Form Corrector (Final Degree Project - 2022)</h3>
+                            <div class="project-description">
+                                <p class="description-preview">Engineering final project Android application utilizing
+                                    computer vision and machine learning to analyze and correct exercise form in
+                                    real-time. Built using Google's MediaPipe vision model for pose estimation...</p>
+                                <p class="description-full" style="display: none;">Engineering final project Android
+                                    application utilizing computer vision and machine learning to analyze and correct
+                                    exercise form in real-time. Built using Google's MediaPipe vision model for pose
+                                    estimation, the app features squat classification and form correction feedback using
+                                    multiple ML models including KNN and neural networks. Currently focused on squat
+                                    exercise correction but designed to be scalable for additional exercise types. The
+                                    trained models are optimized for mobile deployment, providing a complete Android
+                                    fitness solution. Development and model training performed in the <a
+                                        href="https://github.com/romc57/EngineeringFinalProject" target="_blank"
+                                        rel="noopener noreferrer" style="color: #dc2626;">EngineeringFinalProject</a>
+                                    repository.</p>
+                                <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">MediaPipe</span>
+                                <span class="tech-tag">Google Vision</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">KNN</span>
+                                <span class="tech-tag">Neural Networks</span>
+                                <span class="tech-tag">Computer Vision</span>
+                                <span class="tech-tag">Model Optimization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/romc57/PoseTrainner" class="project-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://drive.google.com/file/d/1lweuoz__fVUrakMOixQh6w8ndaG60o-r/view?usp=sharing"
+                                    class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-play-circle"></i> Video Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/python-api-server.png"
+                                alt="PythonApiServer - Multi-Service API Integration" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>PythonApiServer - Multi-Service API Integration Server</h3>
+                            <div class="project-description">
+                                <p class="description-preview">A comprehensive Python Flask server that connects to
+                                    multiple APIs including Spotify, Google, Facebook, Instagram, WhatsApp, and SMS
+                                    services. Features OAuth 2.0 authentication, automatic token refresh, and a unified
+                                    dashboard...</p>
+                                <p class="description-full" style="display: none;">A comprehensive Python Flask server
+                                    that connects to multiple APIs including Spotify, Google, Facebook, Instagram,
+                                    WhatsApp, and SMS services. Features OAuth 2.0 authentication, automatic token
+                                    refresh, and a unified dashboard for managing all connected services. Built with a
+                                    modular architecture using a BaseAPI class that provides common functionality for
+                                    all services, ensuring DRY principles and easy extensibility. Includes Docker
+                                    support for both development and production environments, comprehensive testing with
+                                    pytest, and detailed documentation. The server automatically handles authentication
+                                    flows, token management, and provides a clean REST API for accessing various social
+                                    media and communication platforms.</p>
+                                <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">OAuth 2.0</span>
+                                <span class="tech-tag">REST API</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">pytest</span>
+                                <span class="tech-tag">API Integration</span>
+                                <span class="tech-tag">Spotify API</span>
+                                <span class="tech-tag">Google API</span>
+                                <span class="tech-tag">Facebook API</span>
+                                <span class="tech-tag">Instagram API</span>
+                                <span class="tech-tag">WhatsApp API</span>
+                                <span class="tech-tag">SMS Integration</span>
+                                <span class="tech-tag">Token Management</span>
+                                <span class="tech-tag">Web Scraping</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/romc57/PythonApiServer" class="project-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/images/lisa-cohen-physio.png"
+                                alt="Lisa Cohen Physio - Professional Website" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Lisa Cohen Physio - Professional Physical Therapy Website</h3>
+                            <div class="project-description">
+                                <p class="description-preview">Professional website for Lisa Cohen, MS, PT, featuring
+                                    personalized physical therapy services, orthopedic insoles, and holistic wellness
+                                    care. Built with modern web technologies...</p>
+                                <p class="description-full" style="display: none;">Professional website for Lisa Cohen,
+                                    MS, PT, featuring personalized physical therapy services, orthopedic insoles, and
+                                    holistic wellness care. Built with modern web technologies and responsive design,
+                                    the site showcases her expertise in orthopedic conditions, sports injuries, and
+                                    women's health. Features include service descriptions, custom 3D-scanned orthotics
+                                    information, appointment booking system, and comprehensive contact information. The
+                                    website highlights her work with the Greater Jerusalem Swim team and Olympic
+                                    athletes, utilizing advanced techniques like fascial manipulation, craniosacral
+                                    therapy, and kinesiotaping.</p>
+                                <button class="see-more-btn" onclick="toggleDescription(this)">See more</button>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive Design</span>
+                                <span class="tech-tag">Modern UI/UX</span>
+                                <span class="tech-tag">Professional Website</span>
+                                <span class="tech-tag">Healthcare</span>
+                                <span class="tech-tag">Business Website</span>
+                                <span class="tech-tag">Contact Forms</span>
+                                <span class="tech-tag">Service Showcase</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://romc57.github.io/LisaCohenPhisio/" class="project-link" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i> Live Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- See More Button -->
+                <div class="projects-see-more">
+                    <button class="see-more-projects-btn" onclick="toggleProjects()">
+                        <span class="see-more-text">See More Projects</span>
+                        <span class="see-less-text" style="display: none;">See Less Projects</span>
+                        <i class="fas fa-chevron-down see-more-icon"></i>
+                        <i class="fas fa-chevron-up see-less-icon" style="display: none;"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="skills-container">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">JavaScript</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">C</span>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">Bash</span>
+                            <span class="skill-item">Shell</span>
+                            <span class="skill-item">HTML5</span>
+                            <span class="skill-item">CSS3</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">NoSQL</span>
+                            <span class="skill-item">TypeScript</span>
+                            <span class="skill-item">Kotlin</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>AI Tools & AI-Assisted Development</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">GitHub Copilot</span>
+                            <span class="skill-item">ChatGPT</span>
+                            <span class="skill-item">Claude</span>
+                            <span class="skill-item">Cursor</span>
+                            <span class="skill-item">YOLO</span>
+                            <span class="skill-item">ResNet</span>
+                            <span class="skill-item">K-Means</span>
+                            <span class="skill-item">RL - Ray + GYM</span>
+                            <span class="skill-item">OpenAI API</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">React</span>
+                            <span class="skill-item">React Native</span>
+                            <span class="skill-item">Node.js</span>
+                            <span class="skill-item">Express.js</span>
+                            <span class="skill-item">Flask</span>
+                            <span class="skill-item">FastAPI</span>
+                            <span class="skill-item">Android SDK</span>
+                            <span class="skill-item">jQuery</span>
+                            <span class="skill-item">PyTorch</span>
+                            <span class="skill-item">TensorFlow</span>
+                            <span class="skill-item">Hugging Face</span>
+                            <span class="skill-item">CUDA</span>
+                            <span class="skill-item">TensorRT</span>
+                            <span class="skill-item">Toolkit</span>
+                            <span class="skill-item">pandas</span>
+                            <span class="skill-item">NumPy</span>
+                            <span class="skill-item">Plotly</span>
+                            <span class="skill-item">Optuna</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Databases & Cloud</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">MongoDB</span>
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">Redis</span>
+                            <span class="skill-item">SQLite</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Tools & Technologies</h3>
+                        <div class="skill-items">
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">GitHub</span>
+                            <span class="skill-item">Bitbucket</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">VM</span>
+                            <span class="skill-item">Jenkins</span>
+                            <span class="skill-item">CI/CD</span>
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">Prometheus</span>
+                            <span class="skill-item">Grafana</span>
+                            <span class="skill-item">OpenVPN</span>
+                            <span class="skill-item">WireShark</span>
+                            <span class="skill-item">OSI</span>
+                            <span class="skill-item">RTSP</span>
+                            <span class="skill-item">HLS</span>
+                            <span class="skill-item">GStreamer</span>
+                            <span class="skill-item">REST API</span>
+                            <span class="skill-item">SOAP API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Military Service Section -->
+        <section id="military" class="about">
+            <div class="about-container">
+                <h2 class="section-title">Military Service</h2>
+                <div class="military-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>First Sergeant</h3>
+                                <h4>Armored Corps</h4>
+                                <span class="timeline-date">2013 - 2016</span>
+                                <p>Served in the Armored Corps with progressive leadership responsibilities, discharged
+                                    at the rank of First Sergeant.</p>
+                                <ul class="achievements">
+                                    <li>Tank Commander - Instructed, taught, and ensured safety of squad during basic
+                                        training while taking care of their needs</li>
+                                    <li>Platoon Sergeant - Responsible for logistics, discipline, safety, and served as
+                                        higher authority for professional training</li>
+                                    <li>Company Major - Managed company operations, company logistics, overall
+                                        discipline, and administrative duties</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact-container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's work together!</h3>
+                        <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
+
+                        <div class="contact-items">
+                            <div class="contact-item email-copy" onclick="copyEmail()" title="Click to copy email">
+                                <i class="fas fa-envelope"></i>
+                                <span>rom.cohen10@gmail.com</span>
+                                <span class="copy-tooltip">Copy to clipboard</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+972507148309" class="contact-link"
+                                    aria-label="Phone number +972 50 714 8309">+972-50-714-8309</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Israel</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/rom-cohen-39ba18157" class="social-link"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/romc57" class="social-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://romc57.github.io/RomsPage/" class="social-link" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <p>&copy; 2025 Rom Cohen. All rights reserved.</p>
-            <p class="footer-note" style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.25rem;">This page was created with the assist of Claude Sonnet 4 and GPT-5.</p>
+            <p class="footer-note" style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.25rem;">This page was created
+                with the assist of Claude Sonnet 4 and GPT-5.</p>
         </div>
     </footer>
 
@@ -563,4 +659,5 @@
     <script type="module" src="js/app.js?v=1734810500"></script>
     <script nomodule src="script.js?v=20250825"></script>
 </body>
+
 </html>
